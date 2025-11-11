@@ -12,7 +12,7 @@ app.get("/ping", (req, res) => {
 // Ruta de prueba: consumir una API pública (salida a Internet)
 app.get("/test/public", async (req, res) => {
   try {
-    const r = await axios.get("https://api.github.com/rate_limit", { timeout: 10000 });
+    const r = await axios.get("https://devapi.solgas.com.pe/", { timeout: 10000 });
     res.json({ ok: true, data: r.data });
   } catch (e) {
     res.status(502).json({ ok: false, error: e.message });
